@@ -1,0 +1,19 @@
+version: '3' services:
+  laravel-app:
+    image: img-perpus-rayhandaffa
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mysql-db
+    container_name: perpus-rayhandaffa_
+
+
+  mysql-db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: perpusku_gc
+      MYSQL_USER: student
+      MYSQL_PASSWORD: admin
+    ports:
+      - "3306:3306"
